@@ -157,9 +157,11 @@ export function getPatientResponse(patient: Patient, type: ResponseType, targetP
   const templateIndex = Math.floor(Math.random() * templates.length);
   
   if (type === "peer-interaction") {
+    // Make sure we pass both arguments to the template function
     return templates[templateIndex](patient, targetPatient);
   }
   
+  // For non peer-interaction templates, pass only the patient parameter
   return templates[templateIndex](patient);
 }
 
