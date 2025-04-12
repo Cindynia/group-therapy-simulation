@@ -28,13 +28,12 @@ const PatientAvatar: React.FC<PatientAvatarProps> = ({
             <Avatar 
               className={`h-14 w-14 cursor-pointer transition-all duration-200 ${
                 isActive 
-                  ? 'ring-4 ring-opacity-80 shadow-lg scale-110' 
+                  ? `ring-4 ring-opacity-80 ring-[${patient.color}] shadow-lg scale-110` 
                   : 'opacity-80 hover:opacity-100 hover:scale-105'
               }`}
               style={{ 
                 backgroundColor: patient.color,
-                borderColor: patient.color,
-                ringColor: patient.color 
+                borderColor: patient.color
               }}
             >
               <AvatarFallback className="text-2xl">

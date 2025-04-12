@@ -46,9 +46,9 @@ const responseTemplates = {
     (patient: Patient) => `${patient.name}: *jumps in* That reminds me of something important I wanted to share with the group.`
   ],
   "peer-interaction": [
-    (patient: Patient, targetPatient: Patient) => `${patient.name}: *turns to ${targetPatient.name}* I really relate to what you said about ${targetPatient.therapyGoals[0].toLowerCase()}. I've struggled with that too.`,
-    (patient: Patient, targetPatient: Patient) => `${patient.name}: ${targetPatient.name}, have you tried focusing on ${patient.therapyGoals[Math.floor(Math.random() * patient.therapyGoals.length)].toLowerCase()}? That helped me a lot.`,
-    (patient: Patient, targetPatient: Patient) => `${patient.name}: *nods at ${targetPatient.name}* I appreciate your honesty about your ${targetPatient.clinicalProfile.toLowerCase()}. It makes me feel less alone with my issues.`
+    (patient: Patient, targetPatient: Patient | undefined) => targetPatient ? `${patient.name}: *turns to ${targetPatient.name}* I really relate to what you said about ${targetPatient.therapyGoals[0].toLowerCase()}. I've struggled with that too.` : `${patient.name}: I can relate to what you all are sharing.`,
+    (patient: Patient, targetPatient: Patient | undefined) => targetPatient ? `${patient.name}: ${targetPatient.name}, have you tried focusing on ${patient.therapyGoals[Math.floor(Math.random() * patient.therapyGoals.length)].toLowerCase()}? That helped me a lot.` : `${patient.name}: Has anyone tried focusing on specific therapeutic techniques?`,
+    (patient: Patient, targetPatient: Patient | undefined) => targetPatient ? `${patient.name}: *nods at ${targetPatient.name}* I appreciate your honesty about your ${targetPatient.clinicalProfile.toLowerCase()}. It makes me feel less alone with my issues.` : `${patient.name}: I appreciate everyone's honesty. It makes me feel less alone.`
   ]
 };
 
@@ -156,7 +156,7 @@ export function getPatientResponse(patient: Patient, type: ResponseType, targetP
   const templates = responseTemplates[type];
   const templateIndex = Math.floor(Math.random() * templates.length);
   
-  if (type === "peer-interaction" && targetPatient) {
+  if (type === "peer-interaction") {
     return templates[templateIndex](patient, targetPatient);
   }
   
