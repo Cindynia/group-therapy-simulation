@@ -1,12 +1,23 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React from 'react';
+import TherapySimulator from '../components/TherapySimulator';
+import { patients } from '../data/patientsData';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="container py-6">
+      <header className="mb-6">
+        <h1 className="text-2xl sm:text-3xl font-bold text-therapy-text">
+          Virtual Group Therapy Simulator
+        </h1>
+        <p className="text-muted-foreground mt-1">
+          Lead a simulated 45-minute group therapy session. You are the therapist guiding the conversation.
+        </p>
+      </header>
+      
+      <main>
+        <TherapySimulator patients={patients} />
+      </main>
     </div>
   );
 };
