@@ -1,4 +1,3 @@
-
 import { Patient } from "../data/patientsData";
 
 // Types of therapy responses
@@ -156,13 +155,13 @@ export function getPatientResponse(patient: Patient, type: ResponseType, targetP
   const templates = responseTemplates[type];
   const templateIndex = Math.floor(Math.random() * templates.length);
   
-  if (type === "peer-interaction") {
-    // Make sure we pass both arguments to the template function
-    return templates[templateIndex](patient, targetPatient);
+  if (type === "peer-interaction" && typeof templates[templateIndex] === 'function') {
+    // For peer interactions, we need both the patient and targetPatient
+    return (templates[templateIndex] as Function)(patient, targetPatient);
   }
   
-  // For non peer-interaction templates, pass only the patient parameter
-  return templates[templateIndex](patient);
+  // For non peer-interaction templates, we only need the patient
+  return (templates[templateIndex] as Function)(patient);
 }
 
 // Generate a random therapy event

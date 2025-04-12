@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Button } from '@/components/ui/button';
@@ -232,9 +231,9 @@ const TherapySimulator: React.FC<TherapySimulatorProps> = ({
       </div>
       
       {/* Main content - Therapy session */}
-      <div className="md:col-span-2 lg:col-span-3 flex flex-col gap-4">
+      <div className="md:col-span-2 lg:col-span-3 flex flex-col gap-4 h-[calc(100vh-2rem)]">
         {!sessionEnded ? (
-          <>
+          <div className="flex flex-col h-full">
             {/* Session controls */}
             <Card className="shadow-sm">
               <CardContent className="p-4">
@@ -272,9 +271,9 @@ const TherapySimulator: React.FC<TherapySimulatorProps> = ({
             </Card>
             
             {/* Messages */}
-            <Card className="shadow-sm flex-1">
-              <CardContent className="p-4 h-[calc(100vh-320px)] flex flex-col">
-                <ScrollArea className="flex-1 pr-4">
+            <Card className="shadow-sm flex-1 flex flex-col mt-4 overflow-hidden">
+              <CardContent className="p-4 h-[calc(100vh-220px)] flex flex-col">
+                <ScrollArea className="flex-1 pr-4 mb-4">
                   <div className="space-y-3">
                     {messages.map((msg, index) => {
                       if ('isTherapist' in msg) {
@@ -312,7 +311,7 @@ const TherapySimulator: React.FC<TherapySimulatorProps> = ({
                   </div>
                 </ScrollArea>
                 
-                <div className="mt-4">
+                <div className="mt-auto">
                   <TherapyInput
                     onSubmit={handleTherapistInput}
                     disabled={!isSessionActive || sessionEnded}
@@ -320,7 +319,7 @@ const TherapySimulator: React.FC<TherapySimulatorProps> = ({
                 </div>
               </CardContent>
             </Card>
-          </>
+          </div>
         ) : (
           <SessionSummary 
             summary={sessionSummary} 
