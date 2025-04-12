@@ -58,7 +58,7 @@ const TherapyMessage: React.FC<TherapyMessageProps> = ({
       className={cn(
         messageClass,
         responseTypeClass,
-        "shadow-sm"
+        "shadow-sm my-3"
       )}
       style={!isTherapist && patient ? patientStyle : {}}
     >
@@ -67,7 +67,7 @@ const TherapyMessage: React.FC<TherapyMessageProps> = ({
           <span className="typing-indicator"></span>
         </div>
       ) : (
-        <div>
+        <div className="text-left">
           {content}
         </div>
       )}
