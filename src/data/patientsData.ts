@@ -5,104 +5,104 @@ export interface Patient {
   age: number;
   gender: string;
   avatar: string;
-  clinicalProfile: string;
-  attachmentStyle: string;
+  background: string;
+  lossType: string;
   personalityTraits: string[];
-  traumaHistory: string;
-  therapyGoals: string[];
-  responseStyle: string;
+  griefJourney: string;
+  goals: string[];
+  communicationStyle: string;
   color: string;
 }
 
 export const patients: Patient[] = [
   {
-    id: "patient1",
-    name: "Michael",
-    age: 42,
+    id: "member1",
+    name: "David",
+    age: 35,
     gender: "Male",
-    avatar: "👨‍💼",
-    clinicalProfile: "Major Depression, Work-related Burnout",
-    attachmentStyle: "Avoidant",
-    personalityTraits: ["Perfectionist", "Reserved", "Analytical", "Self-critical"],
-    traumaHistory: "Recent divorce, career setback at a high-pressure corporate job",
-    therapyGoals: [
-      "Develop better work-life boundaries",
-      "Process grief from divorce",
-      "Reduce perfectionist tendencies"
+    avatar: "👨",
+    background: "Lost both parents in a car accident six months ago",
+    lossType: "Sudden loss of parents",
+    personalityTraits: ["Introspective", "Reserved", "Supportive", "Processing"],
+    griefJourney: "Struggling with the suddenness of the loss and unresolved conversations",
+    goals: [
+      "Find ways to honor parents' memory",
+      "Connect with others who understand sudden loss",
+      "Learn to navigate holidays and family events"
     ],
-    responseStyle: "Often intellectualizes feelings, hesitant to open up emotionally, speaks formally",
+    communicationStyle: "Thoughtful and measured, often relates through stories about his parents",
     color: "#4A90E2"
   },
   {
-    id: "patient2",
-    name: "Sarah",
-    age: 29,
+    id: "member2",
+    name: "Maria",
+    age: 42,
     gender: "Female",
-    avatar: "👩‍🎨",
-    clinicalProfile: "Generalized Anxiety Disorder, Social Anxiety",
-    attachmentStyle: "Anxious-Preoccupied",
-    personalityTraits: ["Creative", "Sensitive", "People-pleasing", "Introspective"],
-    traumaHistory: "Emotionally neglectful childhood, bullying in school years",
-    therapyGoals: [
-      "Develop assertiveness skills",
-      "Reduce anxiety in social situations",
-      "Build self-confidence"
+    avatar: "👩",
+    background: "Lost her mother to cancer after a long illness",
+    lossType: "Loss after prolonged illness",
+    personalityTraits: ["Empathetic", "Nurturing", "Emotional", "Strong"],
+    griefJourney: "Balancing gratitude for time to say goodbye with the pain of the loss",
+    goals: [
+      "Process caregiver grief",
+      "Find balance between remembering and moving forward",
+      "Support others in similar situations"
     ],
-    responseStyle: "Speaks tentatively, often looks for validation, apologizes frequently",
+    communicationStyle: "Open and emotional, often shares detailed memories and feelings",
     color: "#67B26F"
   },
   {
-    id: "patient3",
-    name: "Jason",
-    age: 35,
+    id: "member3",
+    name: "James",
+    age: 28,
     gender: "Male",
-    avatar: "👨‍🔧",
-    clinicalProfile: "Adjustment Disorder, Anger Management Issues",
-    attachmentStyle: "Disorganized",
-    personalityTraits: ["Passionate", "Direct", "Protective", "Impulsive"],
-    traumaHistory: "Combat veteran with PTSD, difficult transition to civilian life",
-    therapyGoals: [
-      "Develop healthier anger expression",
-      "Improve relationships with family",
-      "Find purpose in civilian life"
+    avatar: "👨‍🦰",
+    background: "Lost his grandmother who raised him",
+    lossType: "Loss of primary caregiver",
+    personalityTraits: ["Creative", "Sensitive", "Questioning", "Adaptive"],
+    griefJourney: "Working through complex emotions of losing his primary parental figure",
+    goals: [
+      "Understand the impact on his identity",
+      "Keep his grandmother's traditions alive",
+      "Build a support network"
     ],
-    responseStyle: "Alternates between being guarded and emotionally expressive, can be confrontational",
+    communicationStyle: "Alternates between philosophical questions and sharing specific memories",
     color: "#E17055"
   },
   {
-    id: "patient4",
-    name: "Elena",
-    age: 52,
+    id: "member4",
+    name: "Sarah",
+    age: 45,
     gender: "Female",
-    avatar: "👩‍⚕️",
-    clinicalProfile: "Chronic Pain, Adjustment to Medical Condition",
-    attachmentStyle: "Secure with anxious tendencies",
-    personalityTraits: ["Resilient", "Nurturing", "Pragmatic", "Determined"],
-    traumaHistory: "Recent diagnosis of chronic illness, loss of career as a healthcare provider",
-    therapyGoals: [
-      "Accept limitations of new health reality",
-      "Develop new purpose and meaning",
-      "Manage grief over lost abilities"
+    avatar: "👩‍🦰",
+    background: "Lost her father to heart attack while living abroad",
+    lossType: "Distance loss",
+    personalityTraits: ["Practical", "Analytical", "Helpful", "Determined"],
+    griefJourney: "Processing guilt about not being present and cultural expectations around grief",
+    goals: [
+      "Address feelings of guilt",
+      "Connect with siblings in shared grief",
+      "Find ways to grieve across distance"
     ],
-    responseStyle: "Generally direct and thoughtful, occasionally becomes emotional about losses",
+    communicationStyle: "Direct and solution-oriented, while learning to embrace emotional expression",
     color: "#B19CD9"
   },
   {
-    id: "patient5",
-    name: "Raj",
-    age: 24,
+    id: "member5",
+    name: "Miguel",
+    age: 32,
     gender: "Male",
-    avatar: "👨‍🎓",
-    clinicalProfile: "Depression, Identity Development Concerns",
-    attachmentStyle: "Anxious-Avoidant",
-    personalityTraits: ["Intelligent", "Witty", "Self-doubting", "Observant"],
-    traumaHistory: "Cultural conflict within family, academic pressure, experiences of discrimination",
-    therapyGoals: [
-      "Develop sense of identity and direction",
-      "Navigate cultural expectations vs. personal desires",
-      "Build meaningful relationships"
+    avatar: "👨‍🦱",
+    background: "Lost both grandparents within months of each other",
+    lossType: "Multiple losses",
+    personalityTraits: ["Resilient", "Family-oriented", "Contemplative", "Genuine"],
+    griefJourney: "Navigating compound grief and family dynamics after multiple losses",
+    goals: [
+      "Honor cultural grieving traditions",
+      "Support younger family members",
+      "Find peace with multiple losses"
     ],
-    responseStyle: "Often uses humor as defense, insightful about others but deflects personal questions",
+    communicationStyle: "Thoughtful storyteller, often connects through family traditions and customs",
     color: "#20B2AA"
   }
 ];

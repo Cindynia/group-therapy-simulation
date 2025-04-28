@@ -25,13 +25,13 @@ const PatientInfo: React.FC<PatientInfoProps> = ({ patient }) => {
         <ScrollArea className="h-[calc(100vh-370px)] pr-4">
           <div className="space-y-4">
             <div>
-              <h3 className="text-sm font-semibold mb-1">Clinical Profile</h3>
-              <p className="text-sm">{patient.clinicalProfile}</p>
+              <h3 className="text-sm font-semibold mb-1">Background</h3>
+              <p className="text-sm">{patient.background}</p>
             </div>
             
             <div>
-              <h3 className="text-sm font-semibold mb-1">Attachment Style</h3>
-              <p className="text-sm">{patient.attachmentStyle}</p>
+              <h3 className="text-sm font-semibold mb-1">Type of Loss</h3>
+              <p className="text-sm">{patient.lossType}</p>
             </div>
             
             <div>
@@ -46,22 +46,22 @@ const PatientInfo: React.FC<PatientInfoProps> = ({ patient }) => {
             </div>
             
             <div>
-              <h3 className="text-sm font-semibold mb-1">Trauma History</h3>
-              <p className="text-sm">{patient.traumaHistory}</p>
+              <h3 className="text-sm font-semibold mb-1">Grief Journey</h3>
+              <p className="text-sm">{patient.griefJourney}</p>
             </div>
             
             <div>
-              <h3 className="text-sm font-semibold mb-1">Therapy Goals</h3>
+              <h3 className="text-sm font-semibold mb-1">Personal Goals</h3>
               <ul className="list-disc list-inside text-sm space-y-1">
-                {patient.therapyGoals.map((goal, index) => (
+                {patient.goals.map((goal, index) => (
                   <li key={index}>{goal}</li>
                 ))}
               </ul>
             </div>
             
             <div>
-              <h3 className="text-sm font-semibold mb-1">Response Style</h3>
-              <p className="text-sm">{patient.responseStyle}</p>
+              <h3 className="text-sm font-semibold mb-1">Communication Style</h3>
+              <p className="text-sm">{patient.communicationStyle}</p>
             </div>
           </div>
         </ScrollArea>
