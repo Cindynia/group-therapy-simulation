@@ -1,6 +1,6 @@
 
 import React from 'react';
-import TherapySimulator from '../components/TherapySimulator';
+import SupportGroupSession from '../components/SupportGroupSession';
 import { patients } from '../data/patientsData';
 
 const Index = () => {
@@ -16,7 +16,7 @@ const Index = () => {
       </header>
       
       <main>
-        <TherapySimulator patients={patients} />
+        <SupportGroupSession patients={patients} />
       </main>
     </div>
   );

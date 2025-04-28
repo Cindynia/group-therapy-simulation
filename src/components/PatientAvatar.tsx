@@ -48,9 +48,9 @@ const PatientAvatar: React.FC<PatientAvatarProps> = ({
         <TooltipContent>
           <div className="w-64 p-2">
             <h3 className="font-bold text-sm">{patient.name}, {patient.age}</h3>
-            <p className="text-xs mt-1"><span className="font-semibold">Clinical:</span> {patient.clinicalProfile}</p>
-            <p className="text-xs mt-1"><span className="font-semibold">Attachment:</span> {patient.attachmentStyle}</p>
-            <p className="text-xs mt-1"><span className="font-semibold">Goals:</span> {patient.therapyGoals[0]}</p>
+            <p className="text-xs mt-1"><span className="font-semibold">Background:</span> {patient.background.substring(0, 60)}...</p>
+            <p className="text-xs mt-1"><span className="font-semibold">Loss Type:</span> {patient.lossType}</p>
+            <p className="text-xs mt-1"><span className="font-semibold">Goal:</span> {patient.goals[0]}</p>
           </div>
         </TooltipContent>
       </Tooltip>
